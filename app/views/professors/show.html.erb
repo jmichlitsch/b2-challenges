@@ -8,3 +8,4 @@
  <% @professor.students.each do |student| %>
   <h3><%= student.name %></h3>
  <% end %>
+<h4>Average age of Students: <%= @professor.students.average_age.round(2) %></h4>
