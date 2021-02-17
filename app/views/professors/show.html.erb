@@ -5,7 +5,11 @@
  <h3>Professor Specialty: <%= @professor.specialty %></h3>
 
  <h2>Students of <%= @professor.name %></h2>
+ <div id="students-of-<%= @professor.id %>">
  <% @professor.students.each do |student| %>
   <h3><%= student.name %></h3>
+  <section id="unenroll-<%= student.id %>">
+    <%= button_to "Unenroll", "/professors/#{@professor.id}?student_id=#{student.id}", :method => :post %>
+    </section>
  <% end %>
 <h4>Average age of Students: <%= @professor.students.average_age.round(2) %></h4>

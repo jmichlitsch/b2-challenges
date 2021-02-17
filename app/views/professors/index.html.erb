@@ -1,0 +1,11 @@
+<h1>Professor Index</h1>
+
+<% @professors.each do |professor| %>
+  <div id="index-<%= professor.id %>">
+  <%= professor.name %>
+  <%= professor.age %>
+  <%= professor.specialty %>
+  <section id="index-prof-<%= professor.id %>">
+  <%= link_to "Update Professor", "/professors/#{professor.id}/update" %>
+  </section>
+<% end %>
